@@ -68,17 +68,14 @@ https://github.com/user-attachments/assets/49ca6c4f-f6c6-41ab-817b-becea44b5490
    TWITTER_PASSWORD=your_twitter_password
    ```
 
-4. Start your MongoDB server:
-   ```bash
-   mongod
-   ```
 
-5. Run the application:
+
+4. Run the application:
    ```bash
    node index.js
    ```
 
-6. Open the `index.html` file in your browser or serve it via a local HTTP server for better compatibility.
+5. Open the `index.html` file in your browser or serve it via a local HTTP server for better compatibility.
 
 ---
 
