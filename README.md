@@ -123,9 +123,3 @@ https://github.com/user-attachments/assets/49ca6c4f-f6c6-41ab-817b-becea44b5490
 
 ---
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-```
-
-You can save this content as `README.md` in your repository for GitHub. Let me know if you need any further edits!
