@@ -1,6 +1,3 @@
-Here’s the **README code** for your GitHub repository:
-
-```markdown
 # X Trends Scraper
 
 This project scrapes trending topics from [X (formerly Twitter)](https://x.com), stores them in a MongoDB database, and displays them on a simple web page. It leverages Selenium for web scraping, ScraperAPI for proxy handling, and Express.js for serving data via an API.
