@@ -1,12 +1,20 @@
 # X Trends Scraper
 
-This project scrapes trending topics from [X (formerly Twitter)](https://x.com), stores them in a MongoDB database, and displays them on a simple web page. It leverages Selenium for web scraping, ScraperAPI for proxy handling, and Express.js for serving data via an API.
+This project scrapes trending topics from [X (formerly Twitter)](https://x.com) with Varying IP Addresses, stores them in a MongoDB database, and displays them on a simple web page. It leverages Selenium for web scraping, ScraperAPI for proxy handling, and Express.js for serving data via an API.
+
+## Demo Video
+
+
+
+https://github.com/user-attachments/assets/49ca6c4f-f6c6-41ab-817b-becea44b5490
+
+
 
 ---
 
 ## Features
 
-- Scrapes trending topics from X, including the IP address used during the request.
+- Scrapes trending topics from X with Varying IP Address.
 - Stores scraped trends in a MongoDB database with unique IDs and timestamps.
 - Displays the trends on a web page with a simple, responsive design.
 - Includes a "Refresh Trends" button to trigger real-time scraping and update the displayed trends.
