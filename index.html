@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trends Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #trend-list {
+      margin-bottom: 20px;
+    }
+    .trend-item {
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #refresh-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+
+    }
+    #refresh-button:hover {
+      background-color: #45a049;
+    }
+    #loading {
+      display: none;
+      margin: 20px 0;
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Trends</h1>
+  <div id="trend-list"></div>
+  <button id="refresh-button">Refresh Trends</button>
+  <div id="loading">Loading...</div> 
+
+  <script>
+   
+    function displayTrends(data) {
+      const trendList = document.getElementById('trend-list')
+      trendList.innerHTML = '' 
+
+      data.forEach(item => {
+        const trendItem = document.createElement('div')
+        trendItem.classList.add('trend-item')
+        trendItem.innerHTML = `
+          <strong>Unique ID:</strong> ${item.uniqueId}<br>
+          <strong>Trends:</strong> ${item.trends.join(', ')}<br>
+          <strong>Timestamp:</strong> ${new Date(item.timestamp).toLocaleString()}<br>
+          <strong>IP Address:</strong> ${item.ipAddress}
+        `
+        trendList.appendChild(trendItem)
+      })
+    }
+
+    async function refreshTrends() {
+      document.getElementById('loading').style.display = 'block'
+
+      try {
+        const response = await fetch('http://localhost:7000/trends')
+        const data = await response.json()
+
+
+        displayTrends(data)
+
+      } catch (error) {
+        console.error('Error fetching data:', error)
+        alert('Error fetching data. Please try again later.')
+      } finally {
+        document.getElementById('loading').style.display = 'none'
+      }
+    }
+
+
+
+    
+    document.getElementById('refresh-button').onclick = refreshTrends
+  </script>
+
+</body>
+</html>
